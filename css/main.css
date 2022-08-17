@@ -1,34 +1,190 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Indie+Flower&family=Laila&display=swap");
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 .outer-wrapper {
-  width: 100vh;
-  height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scroll-snap-type: y mandatory;
+  width: 100vw;
 }
 .outer-wrapper .wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 500vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-}
-.outer-wrapper .wrapper .site {
-  height: 100vh;
   width: 100vw;
-  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-::-webkit-scrollbar {
-  display: none;
+h1, h3 {
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+h2 {
+  font-family: "Indie Flower", cursive;
+}
+
+p {
+  font-family: "Laila", sans-serif;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.site {
+  min-height: 100vh;
+  background: #FFFEFC;
+  position: relative;
+  padding: 0.5% 0.5% 0.5% 0.5%;
+}
+.site > section {
+  height: 85vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#about > section {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about > section > * {
+  flex: 1;
+}
+#about > section > article {
+  padding: 10% 5% 10% 10%;
+}
+#about > section > div {
+  height: 50%;
+  width: 50%;
+  background: url("https://picsum.photos/400/400") no-repeat center;
+  border-radius: 50%;
+}
+
+#background section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+#background section article {
+  padding: 10%;
+}
+#background section div {
+  height: 100%;
+  width: 100%;
+  background: url("https://picsum.photos/400/300") no-repeat center;
+}
+
+#skills section article {
+  padding: 5%;
+}
+#skills section article ul {
+  padding-left: 5%;
+  margin-bottom: 2%;
+}
+#skills section article li {
+  font-family: "Laila", sans-serif;
+}
+#skills section div {
+  width: 60%;
+  height: 100%;
+  border: 5px solid red;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#projects > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#projects > section > article {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#contact section {
+  display: flex;
+  padding: 5%;
+}
+#contact section aside {
+  width: 10%;
+}
+#contact section aside > * {
+  margin: 10%;
+}
+#contact section form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    margin: 0;
+  }
+  .outer-wrapper {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+  }
+  .outer-wrapper .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+  }
+  .outer-wrapper .wrapper .site {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  nav {
+    z-index: 1;
+    width: 40vw;
+    height: 5vh;
+    position: fixed;
+    top: 5%;
+    right: 0;
+    border-bottom: 1px solid black;
+  }
+  nav ul {
+    padding-left: 1%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+  }
+  nav a {
+    font-family: "Indie Flower", cursive;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: text-decoration 0.5s ease-in;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,2 +1,182 @@
 @import 'variables';
-@import 'horizontal';
+// @import 'horizontal';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+
+}
+.outer-wrapper {
+    width: 100vw;
+    .wrapper {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+}
+h1, h3 {
+    font-family: $headingsFont;
+}
+h2 {
+    font-family: $h2Font;
+}
+p {
+    font-family: $paragraphFont;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.site {
+    min-height: 100vh;
+    background: $pageBackground;
+    position: relative;
+    padding: .5% .5% .5% .5%;
+    & > section {
+        height: 85vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+#about {
+    // background: lightcoral;
+
+    & > section {
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+            flex: 1;
+        }
+        & > article {
+            padding: 10% 5% 10% 10%;
+        }
+        & > div {
+            height: 50%;
+            width: 50%;
+            background: url('https://picsum.photos/400/400') no-repeat center;
+            border-radius: 50%;
+        }
+    }
+}
+#background {
+    // background: lightblue;
+
+    section {
+        // margin-top: 10%;
+        // max-height: 70%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        article {
+            padding: 10%;
+        }
+        div {
+            height: 100%;
+            width: 100%;
+            background: url('https://picsum.photos/400/300') no-repeat center;
+        }
+    }
+}
+#skills {
+    // background: lightgoldenrodyellow;
+
+    section {
+        article {
+            padding: 5%;
+
+            ul {
+                padding-left: 5%;
+                margin-bottom: 2%;
+            }
+            li {
+                font-family: $paragraphFont;
+            }
+        }
+        div {
+            width: 60%;
+            height: 100%;
+            border: 5px solid red;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+#projects {
+    // background: lightgreen;
+
+    & > section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & > article {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+#contact {
+    // background: lightpink;
+    section {
+        display: flex;
+        padding: 5%;
+        aside {
+            width: 10%;
+            & > * {
+                margin: 10%;
+            }
+        }
+        form {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    @import 'horizontal';
+    nav { // on hover das der strick sich aufbaut (div mit width 0 und dann transition 100% width)
+        z-index: 1;
+        width: 40vw;
+        height: 5vh;
+        position: fixed;
+        top: 5%;
+        right: 0;
+        border-bottom: 1px solid black;
+        ul {
+            padding-left: 1%;
+            height: 100%;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5%;
+        }
+        a {
+            font-family: $navFont;
+            color: black;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: text-decoration .5s ease-in;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
