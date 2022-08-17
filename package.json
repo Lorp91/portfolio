@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "first attempt of building a portfolio website about myself",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sassy": "sass --watch ./css/main.scss ./css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lorp91/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lorp91/portfolio/issues"
+  },
+  "homepage": "https://github.com/Lorp91/portfolio#readme",
+  "dependencies": {
+    "sass": "^1.54.4"
+  }
+}
