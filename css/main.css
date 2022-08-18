@@ -5,13 +5,8 @@
   padding: 0;
 }
 
-.outer-wrapper {
+body {
   width: 100vw;
-}
-.outer-wrapper .wrapper {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
 }
 
 h1, h3 {
@@ -19,6 +14,7 @@ h1, h3 {
 }
 
 h2 {
+  padding: 5%;
   font-family: "Indie Flower", cursive;
 }
 
@@ -31,11 +27,20 @@ img {
   max-width: 100%;
 }
 
+.outer-wrapper {
+  width: 100vw;
+}
+.outer-wrapper .wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
 .site {
   min-height: 100vh;
   background: #FFFEFC;
   position: relative;
-  padding: 0.5% 0.5% 0.5% 0.5%;
+  overflow: hidden;
 }
 .site > section {
   height: 85vh;
@@ -46,21 +51,31 @@ img {
 }
 
 #about > section {
-  margin-top: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#about > section > * {
-  flex: 1;
+  position: relative;
 }
 #about > section > article {
+  position: relative;
+  z-index: 1;
+  margin-top: 20%;
+  width: 90%;
   padding: 10% 5% 10% 10%;
 }
+#about > section > article h1 {
+  font-size: 1.5rem;
+}
+#about > section > article p {
+  font-size: 1rem;
+}
 #about > section > div {
-  height: 50%;
-  width: 50%;
+  z-index: 0.5;
+  position: absolute;
+  bottom: 10%;
+  right: -25%;
+  opacity: 0.75;
+  height: 70%;
+  aspect-ratio: 1/1;
   background: url("https://picsum.photos/400/400") no-repeat center;
+  background-size: cover;
   border-radius: 50%;
 }
 
@@ -158,6 +173,12 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
+  h2 {
+    padding: 0;
+  }
+  .site {
+    padding: 0.5% 0.5% 0.5% 0.5%;
+  }
   nav {
     z-index: 1;
     width: 40vw;
@@ -184,6 +205,29 @@ img {
   }
   nav a:hover {
     text-decoration: underline;
+  }
+  #about > section {
+    position: static;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  #about > section > article {
+    position: static;
+    margin-top: 7.5%;
+    width: auto;
+  }
+  #about > section > article h1 {
+    font-size: 3rem;
+  }
+  #about > section > article p {
+    font-size: 1.5rem;
+  }
+  #about > section > div {
+    position: static;
+    align-self: flex-end;
+    margin: 10%;
+    margin-left: -20%;
   }
 }
 
