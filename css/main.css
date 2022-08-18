@@ -160,18 +160,29 @@ nav {
   background-image: url("../img/sass-brands.svg");
 }
 
-#projects > section {
+#projects section {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   flex-wrap: wrap;
+  gap: 1%;
 }
-#projects > section > article {
-  width: 30%;
+#projects section article {
+  height: 25%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+#projects section article div {
+  height: 75%;
+  width: 100%;
+  background-image: url("https://picsum.photos/200/150");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #contact section {
@@ -298,6 +309,10 @@ nav {
     height: 75%;
     bottom: 12.5%;
     right: 5%;
+  }
+  #projects section article {
+    height: 45%;
+    width: 30%;
   }
 }
 
