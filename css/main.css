@@ -128,9 +128,10 @@ nav {
   align-items: center;
 }
 #skills section #hexa-skills > div {
+  opacity: 0;
   position: absolute;
-  height: 25%;
-  width: 25%;
+  height: 35%;
+  width: 35%;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background: black;
 }
@@ -142,22 +143,75 @@ nav {
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 50%;
 }
 #skills section #hexa-skills #html {
-  transform: translate(77%, 52%);
+  transform: translate(0, 102%);
 }
 #skills section #hexa-skills #html div {
   background-image: url("../img/html5-brands.svg");
+}
+#skills section #hexa-skills #css {
+  transform: translate(77%, 51%);
 }
 #skills section #hexa-skills #css div {
   background-image: url("../img/css3-brands.svg");
 }
 #skills section #hexa-skills #sass {
-  transform: translate(-77%, -52%);
+  transform: translate(-77%, 51%);
 }
 #skills section #hexa-skills #sass div {
   background-image: url("../img/sass-brands.svg");
+}
+#skills section #hexa-skills #js div {
+  background-image: url("../img/square-js-brands.svg");
+}
+#skills section #hexa-skills #node {
+  transform: translate(77%, -51%);
+}
+#skills section #hexa-skills #node div {
+  background-image: url("../img/node-js-brands.svg");
+}
+#skills section #hexa-skills #mongo {
+  transform: translate(-77%, -51%);
+}
+#skills section #hexa-skills #mongo div {
+  background-image: url("../img/envira-brands.svg");
+}
+#skills section #hexa-skills #react {
+  transform: translate(0, -102%);
+}
+#skills section #hexa-skills #react div {
+  background-image: url("../img/react-brands.svg");
+}
+#skills section #hexa-skills:hover > div {
+  animation: top-drop 0.5s ease-in;
+  animation-fill-mode: forwards;
+}
+#skills section #hexa-skills:hover > div:nth-child(1n+4) {
+  animation: to-learn-drop 0.5s ease-in;
+  animation-fill-mode: forwards;
+}
+#skills section #hexa-skills:hover #html {
+  animation-delay: 0s;
+}
+#skills section #hexa-skills:hover #css {
+  animation-delay: 0.125s;
+}
+#skills section #hexa-skills:hover #sass {
+  animation-delay: 0.25s;
+}
+#skills section #hexa-skills:hover #js {
+  animation-delay: 0.375s;
+}
+#skills section #hexa-skills:hover #node {
+  animation-delay: 0.5s;
+}
+#skills section #hexa-skills:hover #mongo {
+  animation-delay: 0.625s;
+}
+#skills section #hexa-skills:hover #react {
+  animation-delay: 0.75s;
 }
 
 #projects section {
@@ -353,6 +407,26 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
+  }
+}
+@keyframes top-drop {
+  0% {
+    opacity: 0;
+    margin-bottom: 200%;
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 0%;
+  }
+}
+@keyframes to-learn-drop {
+  0% {
+    opacity: 0;
+    margin-bottom: 200%;
+  }
+  100% {
+    opacity: 0.25;
+    margin-bottom: 0%;
   }
 }
 
