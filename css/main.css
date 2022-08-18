@@ -13,18 +13,32 @@ h1, h3 {
   font-family: "Alegreya Sans SC", sans-serif;
 }
 
+h1 {
+  font-size: 1.5rem;
+}
+
 h2 {
   padding: 5%;
   font-family: "Indie Flower", cursive;
 }
 
+h3 {
+  font-size: 1rem;
+}
+
 p {
   font-family: "Laila", sans-serif;
+  padding-left: 2%;
+  font-size: 0.75rem;
 }
 
 img {
   max-height: 100%;
   max-width: 100%;
+}
+
+nav {
+  position: absolute;
 }
 
 .outer-wrapper {
@@ -43,7 +57,7 @@ img {
   overflow: hidden;
 }
 .site > section {
-  height: 85vh;
+  height: 87.5vh;
   width: 100vw;
   position: absolute;
   bottom: 0;
@@ -60,12 +74,6 @@ img {
   width: 90%;
   padding: 10% 5% 10% 10%;
 }
-#about > section > article h1 {
-  font-size: 1.5rem;
-}
-#about > section > article p {
-  font-size: 1rem;
-}
 #about > section > div {
   z-index: 0.5;
   position: absolute;
@@ -81,16 +89,22 @@ img {
 
 #background section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+#background section #forklift {
+  grid-row-start: 1;
 }
 #background section article {
   padding: 10%;
 }
 #background section div {
-  height: 100%;
-  width: 100%;
-  background: url("https://picsum.photos/400/300") no-repeat center;
+  border-radius: 5%;
+  height: 80%;
+  width: 80%;
+  background: url("https://picsum.photos/400/300") repeat center;
 }
 
 #skills section article {
@@ -173,8 +187,17 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
+  h1 {
+    font-size: 3rem;
+  }
   h2 {
     padding: 0;
+  }
+  h3 {
+    font-size: 2.25rem;
+  }
+  p {
+    font-size: 1.5rem;
   }
   .site {
     padding: 0.5% 0.5% 0.5% 0.5%;
@@ -217,17 +240,18 @@ img {
     margin-top: 7.5%;
     width: auto;
   }
-  #about > section > article h1 {
-    font-size: 3rem;
-  }
-  #about > section > article p {
-    font-size: 1.5rem;
-  }
   #about > section > div {
     position: static;
     align-self: flex-end;
     margin: 10%;
     margin-left: -20%;
+  }
+  #background section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  #background section #forklift {
+    grid-row-start: 2;
   }
 }
 
