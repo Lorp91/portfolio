@@ -68,8 +68,6 @@ nav {
 }
 #about {
     & > section {
-        // position: relative;
-
         & > article {
             position: relative;
             z-index: 1;
@@ -78,11 +76,11 @@ nav {
             padding: 10% 5% 10% 10%;
         }
         & > div {
+            opacity: .5;
             z-index: .5;
             position: absolute;
             bottom: 10%;
             right: -25%;
-            opacity: .75;
             height: 70%;
             aspect-ratio: 1/1;
             background: url('https://picsum.photos/400/400') no-repeat center;
@@ -105,7 +103,7 @@ nav {
             padding: 10%;
         }
         div {
-            border-radius: 5%;
+            border-radius: 15px;
             height: 80%;
             width: 80%;
             background: url('https://picsum.photos/400/300') repeat center;
@@ -132,12 +130,12 @@ nav {
             aspect-ratio: 1/1;
             position: absolute;
             bottom: 0;
-            right: 5%;
+            right: -10%;
             display: flex;
             justify-content: center;
             align-items: center;
             & > div {
-                opacity: 0;
+                opacity: 1;
                 position: absolute;
                 height: 35%;
                 width: 35%;
@@ -196,37 +194,7 @@ nav {
                 }
             }
         }
-        #hexa-skills:hover {
-            & > div {
-                animation: top-drop .5s ease-in;
-                animation-fill-mode: forwards;
-            }
-            & > div:nth-child(1n+4) {
-                animation: to-learn-drop .5s ease-in;
-                animation-fill-mode: forwards;
-            }
-            #html {
-                animation-delay: 0s;
-            }
-            #css {
-                animation-delay: .125s;
-            }
-            #sass {
-                animation-delay: .25s;
-            }
-            #js {
-                animation-delay: .375s;
-            }
-            #node {
-                animation-delay: .5s;
-            }
-            #mongo {
-                animation-delay: .625s;
-            }
-            #react {
-                animation-delay: .75s;
-            }
-        }
+
     }
 }
 #projects {
@@ -378,8 +346,21 @@ nav {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
             #forklift {
-                grid-row-start: 2;
+                opacity: 0;
+                grid-row-start: 1;
+                grid-column-start: 2;
             }
+            #filling-machine {
+                opacity: 0;
+            }
+        }
+        &:hover #forklift {
+            animation: right-slide-in 1s ease-in;
+            animation-fill-mode: forwards;
+        }
+        &:hover #filling-machine {
+            animation: left-slide-in 1s ease-in;
+            animation-fill-mode: forwards;
         }
     }
     #skills {
@@ -396,15 +377,54 @@ nav {
                 height: 75%;
                 bottom: 12.5%;
                 right: 5%;
+                & > div {
+                    opacity: 0;
+                }
+            }
+        }
+        &:hover #hexa-skills {
+            & > div {
+                animation: top-drop .5s ease-in;
+                animation-fill-mode: forwards;
+            }
+            & > div:nth-child(1n+4) {
+                animation: to-learn-drop .5s ease-in;
+                animation-fill-mode: forwards;
+            }
+            #html {
+                animation-delay: 0s;
+            }
+            #css {
+                animation-delay: .125s;
+            }
+            #sass {
+                animation-delay: .25s;
+            }
+            #js {
+                animation-delay: .375s;
+            }
+            #node {
+                animation-delay: .5s;
+            }
+            #mongo {
+                animation-delay: .625s;
+            }
+            #react {
+                animation-delay: .75s;
             }
         }
     }
     #projects {
         section {
             article {
+                opacity: 0;
                 height: 45%;
                 width: 30%;
             }
+        }
+        &:hover article {
+            animation: zoom-in 1s ease-in;
+            animation-fill-mode: forwards;
         }
     }
     #contact {
@@ -428,6 +448,26 @@ nav {
         }
     }
 }
+@keyframes right-slide-in {
+    0% {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+@keyframes left-slide-in {
+    0% {
+        opacity: 0;
+        margin-right: 100%;
+    }
+    100% {
+        opacity: 1;
+        margin-right: 0;
+    }
+}
 @keyframes top-drop {
     0% {
         opacity: 0;
@@ -446,5 +486,15 @@ nav {
     100% {
         opacity: .25;
         margin-bottom: 0%;
+    }
+}
+@keyframes zoom-in {
+    0% {
+        opacity: 0;
+        padding: 5%;
+    }
+    100% {
+        opacity: 1;
+        padding: 0;
     }
 }

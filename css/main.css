@@ -72,11 +72,11 @@ nav {
   padding: 10% 5% 10% 10%;
 }
 #about > section > div {
+  opacity: 0.5;
   z-index: 0.5;
   position: absolute;
   bottom: 10%;
   right: -25%;
-  opacity: 0.75;
   height: 70%;
   aspect-ratio: 1/1;
   background: url("https://picsum.photos/400/400") no-repeat center;
@@ -98,7 +98,7 @@ nav {
   padding: 10%;
 }
 #background section div {
-  border-radius: 5%;
+  border-radius: 15px;
   height: 80%;
   width: 80%;
   background: url("https://picsum.photos/400/300") repeat center;
@@ -122,13 +122,13 @@ nav {
   aspect-ratio: 1/1;
   position: absolute;
   bottom: 0;
-  right: 5%;
+  right: -10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #skills section #hexa-skills > div {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   height: 35%;
   width: 35%;
@@ -183,35 +183,6 @@ nav {
 }
 #skills section #hexa-skills #react div {
   background-image: url("../img/react-brands.svg");
-}
-#skills section #hexa-skills:hover > div {
-  animation: top-drop 0.5s ease-in;
-  animation-fill-mode: forwards;
-}
-#skills section #hexa-skills:hover > div:nth-child(1n+4) {
-  animation: to-learn-drop 0.5s ease-in;
-  animation-fill-mode: forwards;
-}
-#skills section #hexa-skills:hover #html {
-  animation-delay: 0s;
-}
-#skills section #hexa-skills:hover #css {
-  animation-delay: 0.125s;
-}
-#skills section #hexa-skills:hover #sass {
-  animation-delay: 0.25s;
-}
-#skills section #hexa-skills:hover #js {
-  animation-delay: 0.375s;
-}
-#skills section #hexa-skills:hover #node {
-  animation-delay: 0.5s;
-}
-#skills section #hexa-skills:hover #mongo {
-  animation-delay: 0.625s;
-}
-#skills section #hexa-skills:hover #react {
-  animation-delay: 0.75s;
 }
 
 #projects section {
@@ -371,7 +342,20 @@ nav {
     grid-template-rows: repeat(2, 1fr);
   }
   #background section #forklift {
-    grid-row-start: 2;
+    opacity: 0;
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+  #background section #filling-machine {
+    opacity: 0;
+  }
+  #background:hover #forklift {
+    animation: right-slide-in 1s ease-in;
+    animation-fill-mode: forwards;
+  }
+  #background:hover #filling-machine {
+    animation: left-slide-in 1s ease-in;
+    animation-fill-mode: forwards;
   }
   #skills section article {
     top: 15%;
@@ -386,9 +370,46 @@ nav {
     bottom: 12.5%;
     right: 5%;
   }
+  #skills section #hexa-skills > div {
+    opacity: 0;
+  }
+  #skills:hover #hexa-skills > div {
+    animation: top-drop 0.5s ease-in;
+    animation-fill-mode: forwards;
+  }
+  #skills:hover #hexa-skills > div:nth-child(1n+4) {
+    animation: to-learn-drop 0.5s ease-in;
+    animation-fill-mode: forwards;
+  }
+  #skills:hover #hexa-skills #html {
+    animation-delay: 0s;
+  }
+  #skills:hover #hexa-skills #css {
+    animation-delay: 0.125s;
+  }
+  #skills:hover #hexa-skills #sass {
+    animation-delay: 0.25s;
+  }
+  #skills:hover #hexa-skills #js {
+    animation-delay: 0.375s;
+  }
+  #skills:hover #hexa-skills #node {
+    animation-delay: 0.5s;
+  }
+  #skills:hover #hexa-skills #mongo {
+    animation-delay: 0.625s;
+  }
+  #skills:hover #hexa-skills #react {
+    animation-delay: 0.75s;
+  }
   #projects section article {
+    opacity: 0;
     height: 45%;
     width: 30%;
+  }
+  #projects:hover article {
+    animation: zoom-in 1s ease-in;
+    animation-fill-mode: forwards;
   }
   #contact section {
     flex-direction: row;
@@ -409,6 +430,26 @@ nav {
     right: 0;
   }
 }
+@keyframes right-slide-in {
+  0% {
+    opacity: 0;
+    margin-left: 100%;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes left-slide-in {
+  0% {
+    opacity: 0;
+    margin-right: 100%;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
 @keyframes top-drop {
   0% {
     opacity: 0;
@@ -427,6 +468,16 @@ nav {
   100% {
     opacity: 0.25;
     margin-bottom: 0%;
+  }
+}
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    padding: 5%;
+  }
+  100% {
+    opacity: 1;
+    padding: 0;
   }
 }
 
