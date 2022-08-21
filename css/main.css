@@ -79,7 +79,7 @@ nav {
   right: -25%;
   height: 70%;
   aspect-ratio: 1/1;
-  background: url("https://picsum.photos/400/400") no-repeat center;
+  background: url("../img/thumbsup.jpg") no-repeat center;
   background-size: cover;
   border-radius: 50%;
 }
@@ -93,14 +93,596 @@ nav {
 }
 #background section #forklift {
   grid-row-start: 1;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  width: 60%;
+  aspect-ratio: 3/2;
+  background: none;
+}
+@keyframes rolling {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes driving-wobble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2%);
+  }
+}
+#background section #forklift * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#background section #forklift > * {
+  position: absolute;
+}
+#background section #forklift > div:first-child {
+  opacity: 0.7;
+  height: 100%;
+  width: 300%;
+  left: 0;
+  animation: background-scroll 5s infinite linear;
+  display: flex;
+  justify-content: center;
+}
+#background section #forklift > div:first-child div {
+  flex: 1;
+  height: 100%;
+}
+#background section #forklift > div:first-child > div:nth-child(1) {
+  flex: 0;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgb(40, 40, 40) 26%, rgb(124, 124, 124) 26%);
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) {
+  height: 100%;
+  width: 33.3%;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1) > div, #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1) > div, #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) > div {
+  height: 75%;
+  width: 2%;
+  background: lightblue;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
+  left: -1%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) {
+  left: 33%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) {
+  left: 66%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(1) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(1) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(1) > div:nth-child(4) {
+  left: 99%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(2) {
+  height: 100%;
+  width: 33.3%;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(2) > div, #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(2) > div, #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(2) > div {
+  height: 4%;
+  width: 102%;
+  background: orange;
+  position: absolute;
+  left: -1%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(2) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(2) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) {
+  top: 40%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(2) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(2) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) {
+  top: 10%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) {
+  height: 100%;
+  width: 33.3%;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3) > div, #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3) > div, #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) > div {
+  height: 6%;
+  width: 3%;
+  background: repeating-linear-gradient(45deg, black, black 10%, yellow 10%, yellow 20%);
+  position: absolute;
+  top: 70%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) {
+  left: -1.5%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) > div:nth-child(2) {
+  left: 32.5%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) > div:nth-child(3) {
+  left: 65.5%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(3) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(3) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(3) > div:nth-child(4) {
+  visibility: hidden;
+  left: 98.5%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) {
+  height: 100%;
+  width: 33.3%;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div, #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div, #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div {
+  height: 24%;
+  width: 9%;
+  background: black;
+  position: absolute;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(odd), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(odd), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(odd) {
+  background: linear-gradient(0deg, rgb(170, 119, 10) 10%, rgb(0, 36, 97) 10%);
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(even), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(even), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(even) {
+  background: linear-gradient(0deg, rgb(170, 119, 10) 10%, rgb(20, 97, 0) 10%);
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(1), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) {
+  left: 3%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(2), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) {
+  left: 13%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(3), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(3) {
+  left: 23%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(4), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(4) {
+  left: 3%;
+  top: 52%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(5), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(5), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(5) {
+  left: 3%;
+  top: -14%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(6), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(6), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(6) {
+  left: 23%;
+  top: -14%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(7), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(7), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(7) {
+  left: 36%;
+  top: 52%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(8), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(8), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(8) {
+  left: 46%;
+  top: 52%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(9), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(9), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(9) {
+  left: 56%;
+  top: 52%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(10), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(10), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(10) {
+  left: 56%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(11), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(11), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(11) {
+  left: 69%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(12), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(12), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(12) {
+  left: 79%;
+  top: 16%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(13), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(13), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(13) {
+  left: 88%;
+  top: 52%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(14), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(14), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(14) {
+  left: 69%;
+  top: -14%;
+}
+#background section #forklift > div:first-child > div:nth-child(2) > div:nth-child(4) > div:nth-child(15), #background section #forklift > div:first-child > div:nth-child(3) > div:nth-child(4) > div:nth-child(15), #background section #forklift > div:first-child > div:nth-child(4) > div:nth-child(4) > div:nth-child(15) {
+  left: 56%;
+  top: -14%;
+}
+@keyframes background-scroll {
+  from {
+    left: 0;
+  }
+  to {
+    left: -200%;
+  }
+}
+#background section #forklift > div:nth-child(2) {
+  opacity: 1;
+  height: 50%;
+  aspect-ratio: 1/1;
+  bottom: 20%;
+  position: absolute;
+  left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(1) {
+  height: 2%;
+  width: 120%;
+  background: lightgray;
+  opacity: 0.5;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -10%;
+  left: 2%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) {
+  height: 110%;
+  width: 60%;
+  position: absolute;
+  right: -60%;
+  animation: driving-wobble 1s infinite ease-in;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div {
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(1), #background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  height: 10%;
+  width: 5%;
+  background: #222831;
+  left: 20%;
+  bottom: 25%;
+  z-index: 1;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  bottom: 10%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) {
+  height: 100%;
+  width: 20%;
+  background: #393E46;
+  border: thick solid #222831;
+  border-radius: 5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
+  height: 40%;
+  width: 10%;
+  background: #222831;
+  bottom: 0;
+  left: 25%;
+  border-radius: 5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) {
+  height: 2%;
+  width: 100%;
+  background: #222831;
+  border-radius: 5px;
+  left: 25%;
+  bottom: 0;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) {
+  height: 100%;
+  width: 100%;
+  animation: driving-wobble 1s infinite ease-in;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div {
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+  width: 12.5%;
+  height: 40%;
+  transform: rotate(-30deg);
+  right: 10%;
+  bottom: 25%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div {
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+  height: 5%;
+  width: 110%;
+  background: #222831;
+  border-radius: 5px;
+  left: -5%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
+  height: 10%;
+  width: 10%;
+  background: gray;
+  left: 45%;
+  top: 5%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) {
+  height: 85%;
+  width: 100%;
+  background: lightgray;
+  border: thick solid gray;
+  border-radius: 3px;
+  top: 15%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+  height: 30%;
+  width: 30%;
+  top: 25%;
+  left: 35%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div {
+  background: lightgray;
+  border-top: thick solid gray;
+  border-right: thick solid gray;
+  border-top-right-radius: 10px;
+  border-left: medium solid gray;
+  border-bottom: medium solid gray;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+  height: 75%;
+  width: 23%;
+  border-bottom: 0;
+  transform: rotate(-10deg);
+  position: relative;
+  left: -7%;
+  bottom: -10%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+  height: 25%;
+  width: 75%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+  height: 75%;
+  width: 5%;
+  background: #222831;
+  border-radius: 5px;
+  right: 10%;
+  top: -1%;
+  transform: rotate(-15deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(4) {
+  height: 35%;
+  width: 90%;
+  background: #222831;
+  bottom: 0;
+  right: 1.5%;
+  border-top-right-radius: 5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(5) {
+  height: 50%;
+  width: 70%;
+  bottom: -5%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(5) > div {
+  position: absolute;
+  background: #FFC436;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(5) > :nth-child(1) {
+  height: 40%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(5) > :nth-child(2) {
+  height: 60%;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(5) > :nth-child(3) {
+  height: 15%;
+  width: 20%;
+  left: 38.5%;
+  top: 36%;
+  transform: rotate(45deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(6) {
+  height: 5%;
+  width: 71%;
+  background: #222831;
+  left: 10%;
+  border-radius: 5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(7) {
+  height: 50%;
+  width: 5%;
+  background: #FFD369;
+  border-left: medium solid #FFC436;
+  border-right: medium solid #FFC436;
+  top: 5%;
+  left: 15%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(8) {
+  height: 30%;
+  width: 35%;
+  border-right: thick solid #1d1d1d;
+  border-top: thick solid #1d1d1d;
+  border-top-right-radius: 25%;
+  bottom: -5%;
+  left: 0;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(8) > div {
+  background: #1d1d1d;
+  border-radius: 5px;
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(8) > div:nth-child(1) {
+  height: 5px;
+  width: 50%;
+  left: -5%;
+  top: -5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(8) > div:nth-child(2) {
+  height: 50%;
+  width: 5px;
+  right: -5px;
+  bottom: -5%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(9) {
+  height: 40%;
+  width: 35%;
+  border-left: thick solid #1d1d1d;
+  border-top: thick solid #1d1d1d;
+  border-top-left-radius: 25%;
+  right: -3%;
+  top: 65%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(9) > div {
+  background: #1d1d1d;
+  border-radius: 5px;
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(9) > div:nth-child(1) {
+  height: 5px;
+  width: 50%;
+  right: -5%;
+  top: -5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(9) > div:nth-child(2) {
+  height: 50%;
+  width: 5px;
+  bottom: -5px;
+  left: -5px;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(3) > div:nth-child(10) {
+  height: 10%;
+  width: 10%;
+  background: #393E46;
+  right: 10%;
+  transform: rotate(10deg);
+  border: thick solid #222831;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: -10%;
+  right: -15%;
+  animation: rolling 1.5s infinite linear;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div {
+  height: 100%;
+  width: 30%;
+  background: gray;
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) {
+  transform: rotate(45deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) {
+  transform: rotate(90deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(4) {
+  transform: rotate(135deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(5) {
+  height: 90%;
+  width: 90%;
+  background: gray;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(6) {
+  height: 70%;
+  width: 70%;
+  background: #222831;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(7) {
+  height: 60%;
+  width: 60%;
+  background: #FFC436;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(8) {
+  height: 40%;
+  width: 40%;
+  background: #222831;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(4) > div:nth-child(9) {
+  height: 30%;
+  width: 30%;
+  background: #FFD369;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: -10%;
+  right: -15%;
+  animation: rolling 1.5s infinite linear;
+  height: 30%;
+  width: 30%;
+  right: 0;
+  left: 0;
+  animation-duration: 1.25s;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div {
+  height: 100%;
+  width: 30%;
+  background: gray;
+  position: absolute;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) {
+  transform: rotate(45deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(3) {
+  transform: rotate(90deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(4) {
+  transform: rotate(135deg);
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(5) {
+  height: 90%;
+  width: 90%;
+  background: gray;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(6) {
+  height: 70%;
+  width: 70%;
+  background: #222831;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(7) {
+  height: 60%;
+  width: 60%;
+  background: #FFC436;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(8) {
+  height: 40%;
+  width: 40%;
+  background: #222831;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(9) {
+  height: 30%;
+  width: 30%;
+  background: #FFD369;
+  border-radius: 50%;
+}
+#background section #forklift > div:nth-child(2) > div:nth-child(5) > div:nth-child(9) {
+  background: #222831;
 }
 #background section article {
   padding: 10%;
 }
-#background section div {
+#background section > div {
   border-radius: 15px;
-  height: 80%;
-  width: 80%;
+  width: 60%;
+  aspect-ratio: 3/2;
   background: url("https://picsum.photos/400/300") repeat center;
 }
 
