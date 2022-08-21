@@ -112,6 +112,13 @@ nav {
             aspect-ratio: 3/2;
             background: none;
         }
+        #filling-machine {
+            @import 'filling-machine';
+            @include filling-machine;
+            width: 60%;
+            aspect-ratio: 3/2;
+            background: none;
+        }
         article {
             padding: 10%;
         }
