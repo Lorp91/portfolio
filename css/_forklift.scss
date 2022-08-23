@@ -1,0 +1,562 @@
+// border-radius berechenn lassen zb die länge nehmen einer seite nehmen davon etwas rechenn und beim anderen dann diese länge nehmen damit alle rundungen gut aussehen
+// add backlights? (on forklift weight)
+// add batterydoor?
+$innerBlack: #393E46;
+$outerBlack: #222831;
+$black: #1d1d1d;
+$innerGray: lightgray;
+$outerGray: gray;
+$innerYellow: #FFD369;
+$outerYellow: #FFC436;
+
+@mixin tire {
+    $rubberColor: $outerGray;
+    $rimColor: $outerBlack;
+    $innerColor: $innerYellow;
+    $outerColor: $outerYellow;
+
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: -10%;
+    right: -15%;
+    animation: rolling 1.5s infinite linear;
+
+    & > div {
+        height: 100%;
+        width: 30%;
+        background: $rubberColor;
+        position: absolute;
+    }
+    & > div:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    & > div:nth-child(3) {
+        transform: rotate(90deg);
+    }
+    & > div:nth-child(4) {
+        transform: rotate(135deg);
+    }
+    & > div:nth-child(5) {
+        height: 90%;
+        width: 90%;
+        background: $rubberColor;
+        border-radius: 50%;
+    }
+    & > div:nth-child(6) {
+        height: 70%;
+        width: 70%;
+        background: $rimColor;
+        border-radius: 50%;
+    }
+    & > div:nth-child(7) {
+        height: 60%;
+        width: 60%;
+        background: $outerColor;
+        border-radius: 50%;
+    }
+    & > div:nth-child(8) {
+        height: 40%;
+        width: 40%;
+        background: $rimColor;
+        border-radius: 50%;
+    }
+    & > div:nth-child(9) {
+        height: 30%;
+        width: 30%;
+        background: $innerColor;
+        border-radius: 50%;
+    }
+}
+
+@mixin forklift {
+    border: 1px solid black;
+    // height: 100%; // 400px
+    // width: 100%; //  600px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    & > * {
+        position: absolute;
+    }
+    & > div:first-child { // background
+        opacity: .7;
+        height: 100%;
+        width: 300%;
+        // top: 0;
+        left: 0;
+        animation: background-scroll 5s infinite linear;
+        display: flex;
+        justify-content: center;
+        div {
+            flex: 1;
+            height: 100%;
+        }
+        & > div:nth-child(1) {
+            flex: 0;
+            // height: 40px;
+            width: 100%;
+            position: absolute;
+            background: linear-gradient(0deg, rgba(40,40,40,1) 26%, rgba(124,124,124,1) 26%);
+        }
+        & > div:nth-child(2),
+        & > div:nth-child(3),
+        & > div:nth-child(4) {
+            // background: lightgray;
+
+            & > div:nth-child(1) { // verticle bars
+                height: 100%;
+                width: 33.3%;
+                position: absolute;
+                & > div {
+                    height: 75%;
+                    width: 2%;
+                    background: lightblue;
+                    position: absolute;
+                }
+                & > div:nth-child(1) {
+                    left: -1%;
+                }
+                & > div:nth-child(2) {
+                    left: 33%;
+                }
+                & > div:nth-child(3) {
+                    left: 66%;
+                }
+                & > div:nth-child(4) {
+                    left: 99%;
+                }
+            }
+            & > div:nth-child(2) { // horizontal bars
+                height: 100%;
+                width: 33.3%;
+                position: absolute;
+                & > div {
+                    height: 4%;
+                    width: 102%;
+                    background: orange;
+                    position: absolute;
+                    left: -1%;
+                }
+                & > div:nth-child(1) {
+                    top: 40%
+                }
+                & > div:nth-child(2) {
+                    top: 10%
+                }
+            }
+            & > div:nth-child(3) { // shelf protection
+                height: 100%;
+                width: 33.3%;
+                position: absolute;
+                & > div {
+                    height: 6%;
+                    width: 3%;
+                    background: repeating-linear-gradient(
+                        45deg,
+                        black,
+                        black 10%,
+                        yellow 10%,
+                        yellow 20%
+                    );
+                    position: absolute;
+                    top: 70%;
+                }
+                & > div:nth-child(1) {
+                    left: -1.5%;
+                }
+                & > div:nth-child(2) {
+                    left: 32.5%;
+                }
+                & > div:nth-child(3) {
+                    left: 65.5%;
+                }
+                & > div:nth-child(4) {
+                    visibility: hidden;
+                    left: 98.5%;
+                }
+            }
+            & > div:nth-child(4) { // pallets
+                height: 100%;
+                width: 33.3%;
+                position: absolute;
+                & > div {
+                    height: 24%;
+                    width: 9%;
+                    background: black;
+                    position: absolute;
+                }
+                & > div:nth-child(odd) {
+                    background: linear-gradient(0deg, rgba(170,119,10,1) 10%, rgba(0,36,97,1) 10%);
+                }
+                & > div:nth-child(even) {
+                    background: linear-gradient(0deg, rgba(170,119,10,1) 10%, rgba(20,97,0,1) 10%);
+                }
+                & > div:nth-child(1) {
+                    left: 3%;
+                    top: 16%;
+                }
+                & > div:nth-child(2) {
+                    left: 13%;
+                    top: 16%;
+                }
+                & > div:nth-child(3) {
+                    left: 23%;
+                    top: 16%;
+                }
+                & > div:nth-child(4) {
+                    left: 3%;
+                    top: 52%;
+                }
+                & > div:nth-child(5) {
+                    left: 3%;
+                    top: -14%;
+                }
+                & > div:nth-child(6) {
+                    left: 23%;
+                    top: -14%;
+                }
+                & > div:nth-child(7) {
+                    left: 36%;
+                    top: 52%;
+                }
+                & > div:nth-child(8) {
+                    left: 46%;
+                    top: 52%;
+                }
+                & > div:nth-child(9) {
+                    left: 56%;
+                    top: 52%;
+                }
+                & > div:nth-child(10) {
+                    left: 56%;
+                    top: 16%;
+                }
+                & > div:nth-child(11) {
+                    left: 69%;
+                    top: 16%;
+                }
+                & > div:nth-child(12) {
+                    left: 79%;
+                    top: 16%;
+                }
+                & > div:nth-child(13) {
+                    left: 88%;
+                    top: 52%;
+                }
+                & > div:nth-child(14) {
+                    left: 69%;
+                    top: -14%;
+                }
+                & > div:nth-child(15) {
+                    left: 56%;
+                    top: -14%;
+                }
+            }
+        }
+    }
+    @keyframes background-scroll {
+        from { left: 0;}
+        to { left: -200%;}
+    }
+    & > div:nth-child(2) { // forklift
+        opacity: 1;
+        height: 50%;
+        aspect-ratio: 1 / 1;
+        bottom: 20%;
+        position: absolute;
+        left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & > div:nth-child(1) { // shadow
+            height: 2%;
+            width: 120%;
+            background: $innerGray;
+            opacity: .5;
+            border-radius: 5px;
+            position: absolute;
+            bottom: -10%;
+            left: 2%;
+        }
+        & > div:nth-child(2) { // front
+            height: 110%;
+            width: 60%;
+            position: absolute;
+            right: -60%;
+            animation: driving-wobble 1s infinite ease-in;
+
+            & > div {
+                position: absolute;
+            }
+
+            & > div:nth-child(1),
+            & > div:nth-child(2) {
+                height: 10%;
+                width: 5%;
+                background: $outerBlack;
+                left: 20%;
+                bottom: 25%;
+                z-index: 1;
+            }
+            & > div:nth-child(2) {
+                bottom: 10%;
+            }
+            & > div:nth-child(3) {
+                height: 100%;
+                width: 20%;
+                background: $innerBlack;
+                border: thick solid $outerBlack;
+                border-radius: 5px;
+            }
+            & > div:nth-child(4) {
+                height: 40%;
+                width: 10%;
+                background: $outerBlack;
+                bottom: 0;
+                left: 25%;
+                border-radius: 5px;
+            }
+            & > div:nth-child(5) {
+                height: 2%;
+                width: 100%;
+                background: $outerBlack;
+                border-radius: 5px;
+                left: 25%;
+                bottom: 0;
+            }
+        }
+        & > div:nth-child(3) { // body
+            height: 100%;
+            width: 100%;
+            animation: driving-wobble 1s infinite ease-in;
+
+            & > div {
+                position: absolute;
+            }
+            & > div:nth-child(1) { // steering
+                width: 12.5%;
+                height: 40%;
+                transform: rotate(-30deg);
+                right: 10%;
+                bottom: 25%;
+
+                & > div {
+                    position: absolute;
+                }
+                & > div:nth-child(1) {
+                    height: 5%;
+                    width: 110%;
+                    background: $outerBlack;
+                    border-radius: 5px;
+                    left: -5%;
+                }
+                & > div:nth-child(2) {
+                    height: 10%;
+                    width: 10%;
+                    background: $outerGray;
+                    left: 45%;
+                    top: 5%;
+                }
+                & > div:nth-child(3) {
+                    height: 85%;
+                    width: 100%;
+                    background: $innerGray;
+                    border: thick solid $outerGray;
+                    border-radius: 3px;
+                    top: 15%;
+                }
+            }
+            & > div:nth-child(2) { // seating
+                height: 30%;
+                width: 30%;
+                top: 25%;
+                left: 35%;
+
+                & > div {
+                    background: $innerGray;
+                    border-top: thick solid $outerGray;
+                    border-right: thick solid $outerGray;
+                    border-top-right-radius: 10px;
+
+                    border-left: medium solid $outerGray;
+                    border-bottom: medium solid $outerGray;
+                }
+                & > div:nth-child(1) {
+                    height: 75%;
+                    width: 23%;
+                    border-bottom: 0;
+                    transform: rotate(-10deg);
+                    position: relative;
+                    left: -7%;
+                    bottom: -10%;
+                }
+                & > div:nth-child(2) {
+                    height: 25%;
+                    width: 75%;
+                }
+            }
+            & > div:nth-child(3) {
+                height: 75%;
+                width: 5%;
+                background: $outerBlack;
+                border-radius: 5px;
+                right: 10%;
+                top: -1%;
+                transform: rotate(-15deg);
+            }
+            & > div:nth-child(4) {
+                height: 35%;
+                width: 90%;
+                background: $outerBlack;
+                bottom: 0;
+                right: 1.5%;
+                border-top-right-radius: 5px;
+            }
+            & > div:nth-child(5) { // frontplate
+                height: 50%;
+                width: 70%;
+                bottom: -5%;
+                & > div {
+                    position: absolute;
+                    background: $outerYellow;
+                }
+                & > :nth-child(1) {
+                    height: 40%;
+                    width: 100%;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+                & > :nth-child(2) {
+                    height: 60%;
+                    width: 50%;
+                    right: 0;
+                    bottom: 0;
+                }
+                & > :nth-child(3) {
+                    height: 15%;
+                    width: 20%;
+                    left: 38.5%;
+                    top: 36%;
+                    transform: rotate(45deg);
+                }
+            }
+            & > div:nth-child(6) {
+                height: 5%;
+                width: 71%;
+                background: $outerBlack;
+                left: 10%;
+                border-radius: 5px;
+            }
+            & > div:nth-child(7) {
+                height: 50%;
+                width: 5%;
+                background: $innerYellow;
+                border-left: medium solid $outerYellow;
+                border-right: medium solid $outerYellow;
+                top: 5%;
+                left: 15%;
+            }
+            & > div:nth-child(8) { // splashguard back
+                height: 30%;
+                width: 35%;
+                border-right: thick solid $black;
+                border-top: thick solid $black;
+                border-top-right-radius: 25%;
+                bottom: -5%;
+                left: 0;
+                & > div {
+                    background: $black;
+                    border-radius: 5px;
+                    position: absolute;
+                }
+                & > div:nth-child(1) {
+                    height: 5px;
+                    width: 50%;
+                    left: -5%;
+                    top: -5px;
+                }
+                & > div:nth-child(2) {
+                    height: 50%;
+                    width: 5px;
+                    right: -5px;
+                    bottom: -5%;
+                }
+            }
+            & > div:nth-child(9) { // splashguard front
+                height: 40%;
+                width: 35%;
+                border-left: thick solid $black;
+                border-top: thick solid $black;
+                border-top-left-radius: 25%;
+                right: -3%;
+                top: 65%;
+                & > div {
+                    background: $black;
+                    border-radius: 5px;
+                    position: absolute;
+                }
+                & > div:nth-child(1) {
+                    height: 5px;
+                    width: 50%;
+                    right: -5%;
+                    top: -5px;
+                }
+                & > div:nth-child(2) {
+                    height: 50%;
+                    width: 5px;
+                    bottom: -5px;
+                    left: -5px;
+                }
+            }
+            & > div:nth-child(10) { // lamp
+                height: 10%;
+                width: 10%;
+                background: $innerBlack;
+                right: 10%;
+                transform: rotate(10deg);
+                border: thick solid $outerBlack;
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+                border-top-right-radius: 15%;
+                border-bottom-right-radius: 15%;
+            }
+        }
+        & > div:nth-child(4) { // tire
+            @include tire();
+        }
+        & > div:nth-child(5) { // tire
+            @include tire();
+            & > div:nth-child(9) {
+                background: $outerBlack;
+            }
+            height: 30%;
+            width: 30%;
+            right: 0;
+            left: 0;
+            animation-duration: 1.25s;
+        }
+    }
+}
+@keyframes rolling {
+    to { transform: rotate(360deg); }
+}
+@keyframes driving-wobble {
+    0%, 100% { transform: translateY(0); }
+    50%  { transform: translateY(-2%); }
+}
