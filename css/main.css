@@ -1112,6 +1112,7 @@ nav {
     transition: all 0.1s ease-in-out;
   }
   #contact section aside > div:hover {
+    cursor: pointer;
     outline: 3px solid;
     outline-offset: 5px;
     border-radius: 50%;
